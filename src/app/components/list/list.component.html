@@ -4,12 +4,13 @@
     class="input"
     (input)="searchByNameOnInput($event || '')"
   />
-  <div class="container box">
+  <div class="container box" *ngIf="listOfItems.length > 0">
     <app-cards-of-itens
-      *ngFor="let item of listOfItems; index as i"
+      *ngFor="let item of listOfItems"
       name="{{ item['name'] }}"
       description="{{ item['description'] }}"
       imageUrl="{{ item['image'] }}"
     />
   </div>
+  <h1 class="not-found" *ngIf="listOfItems.length <= 0">Nothing found</h1>
 </div>
