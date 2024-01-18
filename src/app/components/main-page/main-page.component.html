@@ -1,0 +1,58 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item logo-elden-wiki">
+      <img src="assets/images/elden-logo.png" />
+      Elden wiki
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start"></div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-dark" href="https://github.com/viniciusnequiz">
+            <strong>GitHub</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<hr />
+<div class="info-box">
+  <div class="tabs is-centered">
+    <ul>
+      <li class="classes is-active" (click)="ChangeTabOptions($event)">
+        <a>Classes</a>
+      </li>
+      <li class="ammos" (click)="ChangeTabOptions($event)"><a>Ammos</a></li>
+      <li class="armors" (click)="ChangeTabOptions($event)"><a>Armors</a></li>
+      <li class="shields" (click)="ChangeTabOptions($event)"><a>Shields</a></li>
+      <li class="weapons" (click)="ChangeTabOptions($event)"><a>Weapons</a></li>
+      <li class="items" (click)="ChangeTabOptions($event)"><a>Items</a></li>
+      <li class="talismans" (click)="ChangeTabOptions($event)">
+        <a>Talismans</a>
+      </li>
+      <li class="ashesOfWar" (click)="ChangeTabOptions($event)">
+        <a>Ashes of War</a>
+      </li>
+      <li class="incantations" (click)="ChangeTabOptions($event)">
+        <a>Incantations</a>
+      </li>
+      <li class="soceries" (click)="ChangeTabOptions($event)">
+        <a>Sorceries</a>
+      </li>
+      <li class="bosses" (click)="ChangeTabOptions($event)"><a>Bosses</a></li>
+      <li class="creatures" (click)="ChangeTabOptions($event)">
+        <a>Creatures</a>
+      </li>
+      <li class="locations" (click)="ChangeTabOptions($event)">
+        <a>Locations</a>
+      </li>
+      <li class="npcs" (click)="ChangeTabOptions($event)"><a>NPCs</a></li>
+      <li class="spirits" (click)="ChangeTabOptions($event)"><a>Spirits</a></li>
+    </ul>
+  </div>
+</div>
+<app-list routeTarget="{{ target }}" />
