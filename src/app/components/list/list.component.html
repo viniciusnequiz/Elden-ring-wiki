@@ -1,8 +1,10 @@
+<div #target></div>
 <div class="container">
   <input
     type="text"
     class="input"
-    (input)="searchByNameOnInput($event || '')"
+    [(ngModel)]="searchInput"
+    (input)="searchByNameOnInput()"
   />
   <div class="container box" *ngIf="listOfItems.length > 0">
     <app-cards-of-itens
@@ -11,6 +13,22 @@
       description="{{ item['description'] }}"
       imageUrl="{{ item['image'] }}"
     />
+    <div class="container page-controller" (click)="scroll(target)">
+      <button
+        class="button is-danger is-light"
+        *ngIf="page > 0"
+        (click)="changePage(page - 1)"
+      >
+        < Back
+      </button>
+      <button
+        class="button is-success is-light"
+        *ngIf="page < totalOfPages"
+        (click)="changePage(page + 1)"
+      >
+        More >
+      </button>
+    </div>
   </div>
   <h1 class="not-found" *ngIf="listOfItems.length <= 0">Nothing found</h1>
 </div>
