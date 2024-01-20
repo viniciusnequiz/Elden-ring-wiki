@@ -2,11 +2,12 @@ import { Component, Input } from '@angular/core';
 import { CardsOfItensComponent } from '../cards-of-itens/cards-of-itens.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { CompleteCardInfoComponent } from '../complete-card-info/complete-card-info.component';
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [CardsOfItensComponent, CommonModule, FormsModule],
+  imports: [CardsOfItensComponent, CommonModule, FormsModule, CompleteCardInfoComponent],
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss'
 })
