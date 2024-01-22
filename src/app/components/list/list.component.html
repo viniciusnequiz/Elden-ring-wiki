@@ -6,7 +6,8 @@
     [(ngModel)]="searchInput"
     (input)="searchByNameOnInput()"
   />
-  <!-- <app-complete-card-info type="Classe" /> -->
+  <app-complete-card-info type="Classe" [objOfItem]="listOfItems[0]" />
+  <div class="blurForCompleteCard"></div>
   <div class="container box" *ngIf="listOfItems.length > 0">
     <app-cards-of-itens
       *ngFor="let item of listOfItems"

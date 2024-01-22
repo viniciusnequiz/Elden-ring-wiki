@@ -9,8 +9,23 @@
 
     <div class="content">
       <div *ngFor="let item of objOfItem | keyvalue">
-        <strong>{{ item.key }}:</strong>
-        <p>{{ item.value }}</p>
+        <div *ngIf="item.key == 'image'">
+          <img [src]="item.value" alt="image not found" />
+        </div>
+        <div
+          *ngIf="
+            typeofItem(item.value) !== 'object' &&
+            item.key != 'image' &&
+            item.key != 'id'
+          "
+        >
+          <strong>{{ item.key }}:</strong>
+          <p>{{ item.value }}</p>
+        </div>
+        <div *ngIf="typeofItem(item.value) === 'object'">
+          <strong>{{ item.key }}:</strong>
+          <p>{{ item.value | json }}</p>
+        </div>
       </div>
     </div>
   </div>
