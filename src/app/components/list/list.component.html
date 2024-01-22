@@ -6,6 +6,7 @@
     [(ngModel)]="searchInput"
     (input)="searchByNameOnInput()"
   />
+  <!-- <app-complete-card-info type="Classe" /> -->
   <div class="container box" *ngIf="listOfItems.length > 0">
     <app-cards-of-itens
       *ngFor="let item of listOfItems"

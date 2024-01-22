@@ -18,6 +18,7 @@ export class ListComponent {
    page: number = 0
    totalOfPages: number = 1
    searchInput: string = ''
+   testeObj: any = {teste: 'teste'}
 
     async searchByNameOnInput() {
       clearTimeout(this.timeOutForANewRequest)

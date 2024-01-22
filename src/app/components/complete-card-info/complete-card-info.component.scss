@@ -1,8 +1,8 @@
-complete-card{
+.complete-card{
     position: absolute !important;
-    top: 20%;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);	
-    width: 200px !important;
-    height: 500px !important; 
+    width: 300px !important;
+    z-index: 99;
 }
