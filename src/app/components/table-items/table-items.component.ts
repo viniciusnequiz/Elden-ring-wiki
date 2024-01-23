@@ -14,6 +14,7 @@ export class TableItemsComponent {
   @Input() objWithTheInformations: any
 
   typeofItem(item:any){
+    console.log(typeof item)
     return typeof item
   }
 }

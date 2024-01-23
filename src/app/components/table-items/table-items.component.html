@@ -3,6 +3,6 @@
     <td>
       <strong>{{ item.key }}</strong>
     </td>
-    <td>{{ item.value }}</td>
+    <td *ngIf="typeofItem(item.value) !== 'object'">{{ item.value }}</td>
   </tr>
 </table>
