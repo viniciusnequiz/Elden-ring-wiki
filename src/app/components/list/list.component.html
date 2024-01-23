@@ -6,11 +6,20 @@
     [(ngModel)]="searchInput"
     (input)="searchByNameOnInput()"
   />
-  <app-complete-card-info type="Classe" [objOfItem]="listOfItems[0]" />
-  <div class="blurForCompleteCard"></div>
+  <app-complete-card-info
+    *ngIf="completeCardInfoState"
+    type="Classe"
+    [objOfItem]="objForCompleteCard"
+  />
+  <div
+    class="blurForCompleteCard"
+    *ngIf="completeCardInfoState"
+    (click)="changeCompleteCardInfoState()"
+  ></div>
   <div class="container box" *ngIf="listOfItems.length > 0">
     <app-cards-of-itens
       *ngFor="let item of listOfItems"
+      (click)="defineObjForCompleteCard(item)"
       name="{{ item['name'] }}"
       description="{{ item['description'] }}"
       imageUrl="{{ item['image'] }}"

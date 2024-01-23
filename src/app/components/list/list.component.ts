@@ -18,6 +18,8 @@ export class ListComponent {
    page: number = 0
    totalOfPages: number = 1
    searchInput: string = ''
+   completeCardInfoState: boolean = false
+   objForCompleteCard: any
 
     async searchByNameOnInput() {
       clearTimeout(this.timeOutForANewRequest)
@@ -28,6 +30,15 @@ export class ListComponent {
         this.listOfItems = data.data
         this.page = 0
       }, 500) 
+   }
+
+   changeCompleteCardInfoState(){
+    return this.completeCardInfoState = !this.completeCardInfoState
+   }
+
+   defineObjForCompleteCard(obj: any){
+    this.objForCompleteCard = obj
+    this.changeCompleteCardInfoState()
    }
 
    async changePage(newPage: number) {
