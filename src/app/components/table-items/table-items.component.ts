@@ -12,4 +12,8 @@ import { Component, Input } from '@angular/core';
 })
 export class TableItemsComponent {
   @Input() objWithTheInformations: any
+
+  typeofItem(item:any){
+    return typeof item
+  }
 }
