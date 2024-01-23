@@ -1,0 +1,8 @@
+<table>
+  <tr *ngFor="let item; in: objWithTheInformations | keyvalue">
+    <td>
+      <strong>{{ item.key }}</strong>
+    </td>
+    <td>{{ item.value }}</td>
+  </tr>
+</table>

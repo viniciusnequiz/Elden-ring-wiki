@@ -23,8 +23,8 @@
           <p>{{ item.value }}</p>
         </div>
         <div *ngIf="typeofItem(item.value) === 'object'">
-          <strong>{{ item.key }}:</strong>
-          <p>{{ item.value | json }}</p>
+          <strong>{{ item.key }}</strong>
+          <app-table-items [objWithTheInformations]="item.value" />
         </div>
       </div>
     </div>
