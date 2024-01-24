@@ -8,7 +8,7 @@
   />
   <app-complete-card-info
     *ngIf="completeCardInfoState"
-    type="Classe"
+    [type]="routeTarget.split(' ')[0]"
     [objOfItem]="objForCompleteCard"
   />
   <div
