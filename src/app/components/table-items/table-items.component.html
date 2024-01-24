@@ -1,8 +1,20 @@
 <table>
   <tr *ngFor="let item of objWithTheInformations | keyvalue">
-    <td>
+    <td *ngIf="typeofItem(item.value) !== 'object'">
       <strong>{{ item.key }}</strong>
     </td>
     <td *ngIf="typeofItem(item.value) !== 'object'">{{ item.value }}</td>
+    <td *ngIf="typeofItem(item.value) === 'object'">
+      <table>
+        <tr *ngFor="let subitem of objectToArray(item.value)">
+          <td>
+            <strong>{{ subitem.key }}</strong>
+          </td>
+          <td>
+            <strong>{{ subitem.value }}</strong>
+          </td>
+        </tr>
+      </table>
+    </td>
   </tr>
 </table>
